@@ -9,6 +9,7 @@ export interface ItineraryItem {
   icon: string;
   link?: string;
   linkLabel?: string;
+  mapLink?: string;
 }
 
 export interface DayData {
@@ -42,6 +43,7 @@ export interface CSVRow {
   Icon: string;
   Link: string;
   LinkLabel: string;
+  MapLink: string;
 }
 
 export interface Translations {
