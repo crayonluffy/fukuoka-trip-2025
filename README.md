@@ -1,37 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 福岡熊本行程 | Fukuoka Trip 2025
 
-## Getting Started
+**Trip:** Dec 26, 2025 - Jan 1, 2026
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🌐 Bilingual (EN / 繁中)
+- 📊 Google Sheet sync
+- 📱 Mobile-first
+- 🔄 Offline fallback
+
+## Project Structure
+
+```
+├── app/
+│   ├── page.tsx          # Main page
+│   ├── layout.tsx        # Root layout
+│   └── globals.css       # Styles
+├── components/
+│   ├── Header.tsx
+│   ├── TripTips.tsx
+│   ├── LanguageToggle.tsx
+│   ├── DayCard.tsx
+│   └── TimelineItem.tsx
+├── hooks/
+│   └── useItinerary.ts   # Data fetching
+├── lib/
+│   ├── csvParser.ts      # CSV parsing
+│   └── icons.tsx         # Icon mapping
+├── constants/
+│   ├── translations.ts   # i18n
+│   └── initialData.ts    # Fallback data
+├── types/
+│   └── index.ts          # TypeScript types
+└── fukuoka-trip-data.csv # CSV for Google Sheets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Google Sheet Setup
 
-## Learn More
+1. Import `fukuoka-trip-data.csv` to Google Sheets
+2. File → Share → Publish to web → CSV
+3. Update `CSV_URL` in `constants/initialData.ts`
 
-To learn more about Next.js, take a look at the following resources:
+## CSV Columns
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Column | EN | 中文 |
+|--------|----|----|
+| Day | Day 1 | 第一天 |
+| Activity | Lunch: Makino Udon | 午餐：牧野烏龍麵 |
+| Location | Hakata Station | 博多站 |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Icons:** `plane`, `train`, `food`, `hotel`, `castle`, `park`, `boat`, `shrine`, `shopping`, `camera`, `walk`, `taxi`
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# fukuoka-trip-2025" 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/crayonluffy/fukuoka-trip-2025)
